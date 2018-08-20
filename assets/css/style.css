@@ -1,116 +1,206 @@
-* {
-    box-sizing: border-box;
-}
-
-#event-holder{
-height: 100px;
-border: 1px solid black;
-margin-bottom: 20px;
-margin-top: 20px;
-padding: 10px;
-}
-
-#restuarant-holder{
-    height: 100px;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-#hotel-holder{
-    height: 100px;
-    border: 1px solid black;  
-    padding: 10px;
-}
-
-#trivia{
-    border: 1px solid black;
-    height: 100px;
-    margin-top: 20px;
-    padding: 10px;
-}
-#game{
-    border: 1px solid black;
-    height: 200px;
-    margin-top: 20px;
-    padding: 10px;
-}
-#radio{
-    border: 1px solid black;
-    height: 90px;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-.col-md-6{
-    float: left;
-    height: 460px;
-    background-color: rgb(250, 251, 252);    
-}
-.col-md-3{
-    float: left;
-    height: 460px;
-    background-color: rgb(22, 69, 116);
-    opacity: 0.9;
-    color: white;
-    
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url("../image/New\ Project\ \(1\).jpg");  */
-    background-color: rgb(4, 18, 44)
+    background-image:url("../image/36601328-image-background.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(147, 212, 26);
+    /* background-color: black; */
+}
+#container{
+    width: 900px;
+    margin: 0 auto;
+}
+#header {
+    width:900px;
+    height: 150px;
+    background-image: url("../image/New\ Project\ \(1\).png");
+    opacity: 0.8;
+    margin-top: 30px;
+}
+.navbar{
+    width:900px;
+    height: 40px;
+    /* opacity: 0.6; */
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-/* Style the header */
-header {
-    background-color: rgb(226, 225, 241);
-    padding: 30px;
-    margin-bottom: 15px;
-    text-align: left;
-    font-size: 35px;
-    color: black;
-    opacity: 0.2;
-}
-
-article {
+li {
     float: left;
-    padding: 20px;
-    width: 100%;
-    height: 500px; 
 }
 
-/* Clear floats after the columns */
-section:after {
-    content: "";
-    display: table;
-    clear: both;
-    margin-bottom: 10px;
-}
-
-/* Style the footer */
-footer {
-    background-color: rgb(4, 29, 58);
-    padding: 10px;
+li a {
+    display: block;
+    color: rgb(147, 212, 26);
     text-align: center;
-    color: white;
+    padding: 6px 8px;
+    text-decoration: none;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(59, 49, 49);
+}
+
+.article {
+    width: 900px;
+    height: 520px;
+    background-color: rgb(3, 0, 0);
+    opacity: 0.7;
+}
+
+#col {
+    width:300px;
+    height: 470px;
+    background-color: rgb(58, 8, 8);
+    float: left;
+}
+
+#mainDisplay{
+    width:560px;
+    height: 400px;
+    background-color: rgb(128, 92, 92);
+    border:2px groove rgb(85, 55, 11);
+    float: right;
+    margin: 10px 20px 20px 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+#header img {
+    width:850px;
+    height: 140px;;
+}
+
+#trivia {
+    width:250px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    margin-left:26px;
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#events {
+    width:250px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left:26px;
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#hotels {
+    width:250px;
+    height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-left:26px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#food {
+    width:250px;
+    height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-left:26px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#game {
+    width:250px;
+    height: 160px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-left:26px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#radio {
+    width:250px;
+    text-align: center;
+    margin-left:26px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
+}
+
+#footer {
+    width: 900px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: rgb(39, 36, 36);
+}
+h6:before {
+    content: '\00A9';
+}
+#moveLine {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+/* @-webkit-keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:900px; top:0px;}
+    50%  {background-color:blue; left:900px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+} */
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:rgb(83, 30, 30); left:0px; top:0px;}
+    25%  {background-color:rgb(112, 112, 44); left:890px; top:0px;}
+    50%  {background-color:rgb(41, 41, 68); left:890px; top:-140px;}
+    75%  {background-color:rgb(76, 117, 76); left:0px; top:-140px;}
+    100% {background-color:rgb(51, 39, 39); left:0px; top:0px;}
+}
+.zoom {
+    transition: transform .2s; /* Animation */
+}
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.2); 
 }
 form.searchDestination input[type=text],form.searchEvent input[type=text] {
     padding: 0.5px;
-    font-size: 17px;
+    font-size: 15px;
     border: 1px solid grey;
     float: left;
-    width: 50%;
-    background: #f1f1f1;
+    width: 25%;
+    background: #382121;
     margin-top:15px;
+    margin-left: 150px;
+    display: block;
 }
 
 form.searchDestination button,form.searchEvent button {
     float: left;
-    width: 10%;
+    width: 5%;
     padding: 0.5px;
-    background: #2196F3;
+    background: rgb(20, 33, 43);
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
@@ -118,22 +208,59 @@ form.searchDestination button,form.searchEvent button {
 }
 
 form.searchDestination button:hover,form.searchEvent button:hover {
-    background: #0b7dda;
-}
-.search-margin{
-    margin-top:20px;
+    background: #01111f;
 }
 
 form.searchDestination::after,form.searchEvent::after {
     content: "";
     clear: both;
-    display: block;
 }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-    nav, article {
-        width: 100%;
-        height: auto;
-    }
+.overlay {
+    height: 470px;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgb(58, 8, 8);
+    overflow-y: hidden;
+    transition: 0.5s;
 }
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 24px;
+    color:	#F5F5F5	;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: gray;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+ /* responsive for overlay display
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  } */
