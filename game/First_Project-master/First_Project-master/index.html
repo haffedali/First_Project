@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivialetravel.com</title>
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id = "container">
+        <div id = "header"><img src = "assets/image/New Project (3).png" alt = "Trivialetravel" />
+            <div id = "moveLine"></div>
+
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <h5>Current Time</h5>
+            <h5 id="city-name">Current City</h5>
+        </nav>
+        <div class = "article">
+            <div id ="col">
+                    
+                <div id = "trivia" class="zoom zoom:hover">Trivia</div>
+                <div id = "events" class="zoom zoom:hover">events</div>
+                <div id = "hotels" class="zoom zoom:hover">Hotels</div>
+                <div id = "food" class="zoom zoom:hover">Restuarnat</div>
+                <div id = "game" class="zoom zoom:hover">Game</div>
+                <div id = "radio" class="zoom zoom:hover">Local radio</div>
+                <div id = "footer"><h6>Copyright.</h6></div>
+            </div>
+            <form class="searchDestination">
+                <input id = "text" type="text" placeholder="Search Destination" name="search">
+                <button id ="submit" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+
+            
+            <div id = "mainDisplay"><h3>Main Display</h3></div>
+            <div id = "map"></div>
+            <div id = "test"></div>
+
+        </div>
+    </div>
+    
+
+
+<script src="assets/javascript/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKaTtDMQ-NxRqw8L_sWUrF-Ep4k9IeZwU&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

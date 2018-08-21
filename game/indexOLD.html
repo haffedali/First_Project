@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- content="width=device-width, initial-scale=1" -->
+        <title>first_project</title>
+        <!--Bootstrap and CSS-->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+        <link rel = "stylesheet" href= "assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+            <style>
+                    body {
+                        /* background-color: #000;
+                        color: #fff; */
+            
+                        /* Allow mouse dragging. */
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        -o-user-select: none;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        
+                        /* disable touch panning/zooming */
+                        -ms-touch-action: none;
+                        touch-action: none;
+            
+                        /* Allow canvas to hit the edges of the browser viewport. */
+                        /* margin: 0; */
+                    }
+            
+                    #screen canvas {
+                        /* margin: auto; */
+                    width:100%;
+                        /* Hide the gap for font descenders. */
+                        display: block;
+                        /* disable scaling interpolation */
+                        image-rendering: optimizeSpeed;
+                        image-rendering: -moz-crisp-edges;
+                        image-rendering: -o-crisp-edges;
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: optimize-contrast;
+                        -ms-interpolation-mode: nearest-neighbor;
+                    }
+                    .parent {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                    .image1 {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                    .image2 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    #weather{
+                        pointer-events: none;
+                        position: absolute; 
+                        top: 150; left: 20;
+                        width:80%;
+                        height: 24%;
+                        /* left: 800px;
+                        float: left; */
+                    }
+                    #weatherX{
+                        pointer-events: none;
+                        position: absolute; 
+                        top: 150; left: 20;
+                        width:99%;
+                        height: 55%;
+                        /* left: 800px;
+                        float: left; */
+                    }
+                    .game-box
+                    {
+                        width: 720px;
+                        height: 420px;
+                    }
+                    .fishes { position: relative; top: 0; left: 0; } 
+                    .fish { position: absolute; top: 0; left: 0; }
+                  </style>
+        <div class = "container">
+            
+            <header>
+              <h1>Trivialetravel</h1>
+            </header>
+            
+            <section>
+              
+            <article >
+                <div class = "col-md-3 ">
+                    <div id = "trivia" placeholder="trivia">
+                        <h4>Trivia</h4>
+                        <button type="submit" name="eventTester">tester</button>
+                    </div>
+                    <div id = "game" placeholder="game">
+                            <div id="screen" >
+                            <img src="data/img/weather/rainLight.gif" alt="Rain"id = "weather" >
+
+                                </div>
+
+                        <!-- <button type="submit" name="eventTester">tester</button> -->
+                    </div>
+                    <div id = "radio" placeholder="radio">
+                        <h6>Radio holder</h6>
+                        <button type="submit" name="eventTester">tester</button>
+                    </div>
+                </div>
+                <div class = "col-md-6 ">
+                    <form class="searchDestination">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    <div id = "mainDisplay"><h1>Main Display Here</h1></div>
+                </div>       
+                <div class = "col-md-3 ">
+                    <form class="searchEvent search-margin">
+                        <input type="text" placeholder="Search events,hotel" name="search" >
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    <div id = "event-holder">
+                        <h4>Events holder</h4>
+                        <button type="submit" name="eventTester">tester</button>
+                    </div>
+                    <div id = "restuarant-holder">
+                            <h4>Restuarant-holder</h4>
+                            <button type="submit" name="restuarantTester">tester</button>
+                    </div>
+                    <div id = "hotel-holder">
+                        <h4>Hotel holder</h4>
+                        <button type="submit" name="hotelTester">tester</button>
+                    </div>
+                </div>       
+
+            </article>
+            
+            </section>
+            
+            <footer>
+              <p>Copyright.</p>
+            </footer>
+        </div>  
+        
+        <!-- Script -->
+  <!-- <script src="assets/javascript/app.js"></script>   -->
+  <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+		<!-- melonJS Library -->
+		<!-- build:js js/app.min.js -->
+		<script type="text/javascript" src="js/close-pixelate.js"></script>
+
+		<script type="text/javascript" src="js/weather.js"></script>
+
+		<script type="text/javascript" src="../lib/melonJS.js"></script>
+		<!-- Plugin(s) -->
+		<script type="text/javascript" src="../lib/plugins/debug/debugPanel.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+		<!-- Game Scripts -->
+		<script type="text/javascript" src="js/game.js"></script>
+		<script type="text/javascript" src="js/resources.js"></script>
+
+		<script type="text/javascript" src="js/entities/entities.js"></script>
+		<script type="text/javascript" src="js/entities/HUD.js"></script>
+
+		<script type="text/javascript" src="js/screens/title.js"></script>
+		<script type="text/javascript" src="js/screens/play.js"></script>
+		<!-- /build -->
+		<!-- Bootstrap & Mobile optimization tricks -->
+		<script type="text/javascript">
+		
+			window.onReady(function onReady() {
+				game.onload();
+				
+				// Mobile browser hacks
+				if (me.device.isMobile && !navigator.isCocoonJS) {
+					// Prevent the webview from moving on a swipe
+					window.document.addEventListener("touchmove", function (e) {
+						e.preventDefault();
+						window.scroll(0, 0);
+						return false;
+					}, false);
+
+					// Scroll away mobile GUI
+					(function () {
+						window.scrollTo(0, 1);
+						me.video.onresize(null);
+					}).defer();
+
+					me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+						window.scrollTo(0, 1);
+					});
+				}
+			});
+		</script>
+    </body>
+</html>

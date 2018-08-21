@@ -1,0 +1,61 @@
+body {
+    background-color: #000;
+    color: #fff;
+
+    /* Allow mouse dragging. */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+	
+	/* disable touch panning/zooming */
+	-ms-touch-action: none;
+	touch-action: none;
+
+    /* Allow canvas to hit the edges of the browser viewport. */
+    margin: 0;
+}
+
+#screen canvas {
+    margin: auto;
+width:50%;
+height: 50%;
+    /* Hide the gap for font descenders. */
+    display: block;
+	
+	/* disable scaling interpolation */
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .weather{
+	pointer-events: none;
+	position: relative;
+	left: 800px;
+	float: left;
+}
+.game-box
+{
+	/* width: 250px */
+}
+.fishes { position: relative; top: 0; left: 0; } 
+  .fish { position: absolute; top: 0; left: 0; }

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivial Traveler.com</title>
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div id = "container">
+        <div id = "header"><img src = "assets/image/trivialtraveler.png" alt = "Trivialetravel" />
+            <div id = "moveLine"></div>
+
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <h5 class ="current-time">Current Time</h5>
+            <h5 class="current-city">Current City</h5>
+        </nav>
+        <div class = "article">
+            <div id ="col">
+                    
+                <div id = "trivia" class="zoom zoom:hover">Trivia</div>
+                <div id = "events" class="zoom zoom:hover">Events</div>
+                <div id = "hotels" class="zoom zoom:hover">Hotels</div>
+                <div id = "food" class="zoom zoom:hover">Restaurant</div>
+                <div id = "game" placeholder="game" >
+                    <div id="screen" >
+                        <img src="data/img/weather/clear.png" alt="Rain"id = "weather" >
+
+                            </div>
+                </div>
+                <div id = "local-weather" class="zoom zoom:hover">Local Weather</div>
+                <div id = "footer"><h6>Copyright.</h6></div>
+            </div>
+            <form class="searchDestination">
+                <input class ="search-data" type="text" placeholder="Search Destination" name="search">
+                <button ><i class="fa fa-search"></i></button>
+            </form>
+            <div id = "mainDisplay"><h3></h3>
+                <h1><div id="temp"></div><div id="minutely"></div></h1>
+                <h2><div id="location"></div></h2>
+                  </div></div>
+
+        </div>
+    </div>
+    <div id = "map"></div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<!-- melonJS Library -->
+<!-- build:js js/app.min.js -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKaTtDMQ-NxRqw8L_sWUrF-Ep4k9IeZwU&libraries=places&callback=initMap" async defer></script>
+
+<script type="text/javascript" src="js/close-pixelate.js"></script>
+
+<script type="text/javascript" src="js/weather.js"></script>
+
+<script type="text/javascript" src="lib/melonJS.js"></script>
+<!-- Plugin(s) -->
+<script type="text/javascript" src="lib/plugins/debug/debugPanel.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<!-- Game Scripts -->
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<script type="text/javascript" src="js/resources.js"></script>
+
+<script type="text/javascript" src="js/entities/entities.js"></script>
+<script type="text/javascript" src="js/entities/HUD.js"></script>
+
+<script type="text/javascript" src="js/screens/title.js"></script>
+<script type="text/javascript" src="js/screens/play.js"></script>
+<!-- /build -->
+<!-- Bootstrap & Mobile optimization tricks -->
+<script type="text/javascript">
+  var clicked =false;
+  $(".current-time").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+  $(".current-city").text(city);
+  function UpdateSecond()
+  {
+    $(".current-time").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+
+  }
+  function UpdateMinute()
+  {
+    // $(".current-city").text(city);
+    getWeather();
+   
+
+  }
+  setInterval( UpdateSecond, 1000);
+  setInterval( UpdateMinute, 60000);
+function getWeather() {
+  var location = $(".current-city").text();
+  var apiKey = "874dbeb81e5b1b3a98412c85f58cf475";
+  var url = "https://api.forecast.io/forecast/";
+  navigator.geolocation.getCurrentPosition(success, error);
+//console.log(lat +"/"+lng)
+  function success(position) {
+      if(lat!==0&&lng!==0)
+      { latitude = lat;//position.coords.latitude;
+        longitude = lng;//position.coords.longitude;
+        }
+    else {
+        latitude =position.coords.latitude;
+        longitude = position.coords.longitude;}
+
+   //  location.innerHTML =
+   //    "Latitude is " + latitude + "° Longitude is " + longitude + "°";
+   $.getJSON(
+      url + apiKey + "/" + latitude + "," + longitude + "?callback=?",
+      function(data) {
+        //   console.log(data);
+        if(clicked)
+        {   $(".spots").empty();
+            $("#temp").html(data.currently.temperature + "° F");
+            $("#minutely").html(data.minutely.summary);
+        }
+        var precipitation=data.minutely.icon;
+        console.log(precipitation);
+        if(precipitation=="clear-day")
+        {
+            weather="none";
+            $("#weather").attr("src","data/img/weather/clear.png")
+            // scrollText="hey, it's nice out! "
+        }
+        if(precipitation=="rain")
+        {
+            weather="rain"
+            $("#weather").attr("src","data/img/weather/rainLight.gif")
+            // scrollText=`hey, it's ${weather}ing!   `
+        }
+        if(precipitation=="snow")
+        {
+            weather="snow";
+            $("#weather").attr("src","data/img/weather/snow.gif")
+            // scrollText=`hey, it's ${weather}ing!   `
+        }
+        // console.log(data.minutely.icon);
+    //     var chance = data.minutely.data[0].precipProbability
+    //    if(chance>.20){
+    //     $("#rain").html(chance, + "% Chance of", data.minutely.data[0].precipType);
+    //    }
+      }
+    );
+  }
+
+  function error() {
+    location.innerHTML = "Unable to retrieve your location";
+  }
+
+
+}/////////////end get weather
+function SetMainDisplay()
+{
+    $("#temp").empty();
+        $("#minutely").empty();
+      $(".spots").empty();
+      $(".more-details").empty();
+   // $("#temp").empty();
+   // $("#minutely").empty();
+   //clicked=true;
+//    console.log( me.state)
+   me.state.change(me.state.MENU);
+   gameRunning=false;
+   getWeather();
+   var screen = $( "#screen" ).detach();
+        screen.appendTo( "#game" );
+        $('#weatherX').attr('id','weather')
+}
+$(document).on("click",".fa-search",function() {
+    SetMainDisplay();
+//     $("#temp").empty();
+//     $("#minutely").empty();
+//    clicked=true;
+//    console.log( me.state)
+//    me.state.change(me.state.MENU);
+//    gameRunning=false;
+//    getWeather();
+//    var screen = $( "#screen" ).detach();
+//         screen.appendTo( "#game" );
+//         $('#weatherX').attr('id','weather')
+})
+$(document).on("click","#local-weather",function() {
+    $("#temp").empty();
+        $("#minutely").empty();
+      $(".spots").empty();
+      $(".more-details").empty();
+
+   clicked=true;
+   SetMainDisplay();
+  
+// //    console.log( me.state)
+//    me.state.change(me.state.MENU);
+//    gameRunning=false;
+//    getWeather();
+//    var screen = $( "#screen" ).detach();
+//         screen.appendTo( "#game" );
+//         $('#weatherX').attr('id','weather')
+})
+$(document).on("click","#hotels",function() {
+    clicked=false;
+    $("#temp").empty();
+        $("#minutely").empty();
+      $(".spots").empty();
+      $(".more-details").empty();
+    SetMainDisplay();
+})
+$(document).on("click","#food",function() {
+    clicked=false;
+    $("#temp").empty();
+        $("#minutely").empty();
+      $(".spots").empty();
+      $(".more-details").empty();
+    SetMainDisplay();
+})
+getWeather();
+
+  window.onReady(function onReady() {
+      game.onload();
+      
+      // Mobile browser hacks
+      if (me.device.isMobile && !navigator.isCocoonJS) {
+          // Prevent the webview from moving on a swipe
+          window.document.addEventListener("touchmove", function (e) {
+              e.preventDefault();
+              window.scroll(0, 0);
+              return false;
+          }, false);
+
+          // Scroll away mobile GUI
+          (function () {
+              window.scrollTo(0, 1);
+              me.video.onresize(null);
+          }).defer();
+
+          me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+              window.scrollTo(0, 1);
+          });
+      }
+  });
+</script>
+
+
+</body>
+</html>
