@@ -66,6 +66,7 @@ geocoder.geocode({'address': city}, function(results, status) {
       console.log(status);
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         // $('#mainDisplay').empty();
+        
         $("#temp").empty();
         $("#minutely").empty();
       $(".spots").empty();
@@ -154,11 +155,11 @@ $(".fa-search").on("click", function(event){
   initMap();
 });
 
-$("#details").on("click", function(event){
-  event.preventDefault();
-  details = true;
-  initMap();
-});
+// $("#details").on("click", function(event){
+//   event.preventDefault();
+//   details = true;
+//   initMap();
+// });
 
 /*
 $("#submit2").on("click", function(event){
@@ -170,6 +171,8 @@ $("#submit2").on("click", function(event){
 
 $("#hotels").on("click", function(event){
     event.preventDefault();
+    detail = false;
+
     $("#temp").empty();
     $("#minutely").empty();
   $(".spots").empty();
@@ -180,7 +183,10 @@ $("#hotels").on("click", function(event){
 });
 
 $("#food").on("click", function(event){
+  
   event.preventDefault();
+  detail = false;
+
   $("#temp").empty();
   $("#minutely").empty();
 $(".spots").empty();
@@ -204,6 +210,5 @@ $(document).on('click', '#details', function(){
   detailId = this.value;
   //$("test").append(detailDiv);
   initMap();
-  //detail = false;
 });
 
