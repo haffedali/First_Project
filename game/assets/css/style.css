@@ -2,17 +2,6 @@ body {
     background-image:url("../image/36601328-image-background.jpg");
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(147, 212, 26);
-    /* background-color: black; */
-   /* Allow mouse dragging. */
-   -moz-user-select: none;
-   -ms-user-select: none;
-   -o-user-select: none;
-   -webkit-user-select: none;
-   user-select: none;
-   
-   /* disable touch panning/zooming */
-   -ms-touch-action: none;
-   touch-action: none;
 }
 #container{
     width: 900px;
@@ -21,14 +10,13 @@ body {
 #header {
     width:900px;
     height: 150px;
-    background-image: url("../image/header.png");
+    background-image: url("../image/New\ Project\ \(1\).png");
     opacity: 0.8;
     margin-top: 30px;
 }
 .navbar{
     width:900px;
     height: 40px;
-    /* opacity: 0.6; */
 }
 ul {
     list-style-type: none;
@@ -36,11 +24,9 @@ ul {
     padding: 0;
     overflow: hidden;
 }
-
 li {
     float: left;
 }
-
 li a {
     display: block;
     color: rgb(147, 212, 26);
@@ -50,25 +36,21 @@ li a {
     /* border: 1px solid black; */
     margin-left: 20px;
 }
-
 li a:hover:not(.active) {
     background-color: rgb(59, 49, 49);
 }
-
 .article {
     width: 900px;
     height: 520px;
     background-color: rgb(3, 0, 0);
     opacity: 0.7;
 }
-
 #col {
     width:300px;
     height: 470px;
     background-color: rgb(58, 8, 8);
     float: left;
 }
-
 #mainDisplay{
     width:560px;
     height: 400px;
@@ -76,16 +58,60 @@ li a:hover:not(.active) {
     border:2px groove rgb(85, 55, 11);
     float: right;
     margin: 10px 20px 20px 20px;
-    /* text-align: center; */
     padding: 10px;
     overflow-y: auto;
 }
-
+#name {
+    font-weight: bold;
+    padding: 5px 5px ;
+    font-size: 24px;
+    
+}
+#rating {
+    padding: 4px;
+    font-size: 14px;
+    float: left;
+}
+#price {
+    padding: 4px;
+    font-size: 14px;
+    margin-left:50px;
+    display: block;
+}
+#review1 {
+    display: block;
+    font-size: 14px;
+    height: 60px;
+    border: 1px solid black;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+#review2{
+    display: block;
+    font-size: 14px;
+    height: 60px;
+    border: 1px solid black;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+#review3{
+    display: block;
+    font-size: 14px;
+    height: 60px;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+#address a, #address {
+ color: rgb(147, 212, 26); 
+ font-size: 14px; 
+}
+#phone {
+    font-size: 14px;
+}
 #header img {
     width:850px;
     height: 140px;;
 }
-
 #trivia {
     width:250px;
     height: 50px;
@@ -96,7 +122,6 @@ li a:hover:not(.active) {
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
 }
-
 #events {
     width:250px;
     height: 50px;
@@ -106,7 +131,6 @@ li a:hover:not(.active) {
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
 }
-
 #hotels {
     width:250px;
     height: 50px;
@@ -116,7 +140,6 @@ li a:hover:not(.active) {
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
 }
-
 #food {
     width:250px;
     height: 50px;
@@ -126,18 +149,14 @@ li a:hover:not(.active) {
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
 }
-
 #game {
     width:250px;
     height: 160px;
     margin-bottom: 10px;
-    /* text-align: center; */
+    text-align: center;
     margin-left:26px;
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
-}
-.search-data{
-    color: rgb(147, 212, 26);
 }
 #local-weather {
     width:250px;
@@ -146,7 +165,6 @@ li a:hover:not(.active) {
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
 }
-
 #footer {
     width: 900px;
     text-align: center;
@@ -161,8 +179,6 @@ h6:before {
     width: 10px;
     height: 10px;
     background-color: red;
-    background-image:url("http://getdrawings.com/cliparts/war-plane-clipart-4.jpg");
-    
     position: relative;
     -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
@@ -171,16 +187,14 @@ h6:before {
     animation-duration: 15s;
     animation-iteration-count: infinite;
 }
-
 /* Safari 4.0 - 8.0 */
-/* @-webkit-keyframes example {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:900px; top:0px;}
-    50%  {background-color:blue; left:900px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
-} */
-
+@-webkit-keyframes example {
+    0%   {background-color:rgb(83, 30, 30); left:0px; top:0px;}
+    25%  {background-color:rgb(112, 112, 44); left:890px; top:0px;}
+    50%  {background-color:rgb(41, 41, 68); left:890px; top:-140px;}
+    75%  {background-color:rgb(76, 117, 76); left:0px; top:-140px;}
+    100% {background-color:rgb(51, 39, 39); left:0px; top:0px;}
+}
 /* Standard syntax */
 @keyframes example {
     0%   {background-color:rgb(83, 30, 30); left:0px; top:0px;}
@@ -204,13 +218,10 @@ form.searchDestination input[type=text],form.searchEvent input[type=text] {
     float: left;
     width: 25%;
     background: white;
-
-    /* background: #382121; */
     margin-top:15px;
     margin-left: 150px;
     display: block;
 }
-
 form.searchDestination button,form.searchEvent button {
     float: left;
     width: 5%;
@@ -223,16 +234,13 @@ form.searchDestination button,form.searchEvent button {
     cursor: pointer;
     margin-top:15px;
 }
-
 form.searchDestination button:hover,form.searchEvent button:hover {
     background: #01111f;
 }
-
 form.searchDestination::after,form.searchEvent::after {
     content: "";
     clear: both;
 }
-
 .overlay {
     height: 470px;
     width: 300px;
@@ -245,43 +253,33 @@ form.searchDestination::after,form.searchEvent::after {
     overflow-y: hidden;
     transition: 0.5s;
 }
-
 .overlay-content {
     position: relative;
     top: 25%;
     text-align: center;
     margin-top: 30px;
 }
-
 .overlay a {
     padding: 8px;
     text-decoration: none;
     font-size: 24px;
-    color:	#F5F5F5	;
+    color:  #F5F5F5 ;
     display: block;
     transition: 0.3s;
 }
-
 .overlay a:hover, .overlay a:focus {
     color: gray;
 }
-
 .overlay .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
     font-size: 60px;
 }
- /* responsive for overlay display
-@media screen and (max-height: 450px) {
-  .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  } */
-  
+#spotbutton {
+    height: 15px;
+    width: 15px;
+}
 
 #screen canvas {
     /* margin: auto; */
