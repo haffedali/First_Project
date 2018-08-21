@@ -10,7 +10,10 @@
     <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
         </div>
         <nav class="navbar navbar-dark bg-dark">
             <h5>Current Time</h5>
-            <h5>Current City</h5>
+            <h5 id="city-name">Current City</h5>
         </nav>
         <div class = "article">
             <div id ="col">
@@ -35,16 +38,20 @@
                 <div id = "footer"><h6>Copyright.</h6></div>
             </div>
             <form class="searchDestination">
-                <input type="text" placeholder="Search Destination" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input id = "text" type="text" placeholder="Search Destination" name="search">
+                <button id ="submit" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div id = "mainDisplay"><h3>Main Display</h3></div>
+
+            
+            <div id = "map"><h3>Main Display</h3></div>
+            <div id = "test"></div>
 
         </div>
     </div>
     
 
 
-
+<script src="assets/javascript/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKaTtDMQ-NxRqw8L_sWUrF-Ep4k9IeZwU&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
