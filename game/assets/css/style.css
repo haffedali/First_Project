@@ -153,7 +153,7 @@ li a:hover:not(.active) {
     width:250px;
     height: 160px;
     margin-bottom: 10px;
-    text-align: center;
+    /* text-align: center; */
     margin-left:26px;
     padding: 10px;
     background-image: linear-gradient(rgb(7, 0, 0), rgba(75, 17, 17, 0.788));
